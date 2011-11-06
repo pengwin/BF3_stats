@@ -1,0 +1,4 @@
+Django 1.3 application
+Works with api dicribed in http://bf3stats.com/api
+Displays medals and ribbons lists sorted by completion and qantity.
+

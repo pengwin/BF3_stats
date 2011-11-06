@@ -1,0 +1,23 @@
+{% extends "master_page.html" %}
+
+{% block title %}Player info{% endblock %}
+
+{%block scripts %}
+<script type="text/javascript" src="{{ STATIC_URL }}/js/player.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div id="search">
+<center>
+<img src="{{ image_url }}/bf3/servicestars/servicestar.png">
+<br/>
+Enter soldier name 
+<input id="player_name" type="text"/>
+<button id="find_player" name="find_player">Find</button>
+<center>
+</div>
+
+<div id="result"></div>
+	
+{% endblock %}

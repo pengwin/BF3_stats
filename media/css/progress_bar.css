@@ -1,0 +1,19 @@
+.progress_bar {
+	position: relative;
+	bottom: 1px;
+}
+.bar_wrap {
+	border: 1px solid gray;
+	background-color: gray;
+}
+.bar {
+	height: 10px;
+	max-width: 100%;
+	background-color: black;
+	border: 1px solid gray;
+}
+.captions {
+	color: black;
+	padding: 5px 2px 0;
+	font: 11px /14px sans-serif;
+}

@@ -1,0 +1,19 @@
+input {
+		margin: 4px;
+		border-width: 1px;
+		border-style: solid;
+		border-color: gray;
+	}
+	button {
+		margin: 4px;
+		cursor: pointer;
+		border-width: 1px;
+		border-style: solid;
+		border-color: gray;
+	}
+	.left {
+		float: left;
+	}
+	.right {
+		float: right;
+	}

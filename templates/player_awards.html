@@ -1,0 +1,14 @@
+<html>
+<title>Awards stat for {{ name }}</title>
+<body>
+Player:  {{ name }}<br/>
+Rank : {{ stats.rank.nr }} <br/>
+<ul>
+{% for key,medal in stats.medals.items %}
+<li> Medal: {{ medal.name }} <br/>
+Progress: {{ medal.curr }}/{{ medal.needed }}
+</li>
+{% endfor %}
+</ul>
+</body>
+</html>

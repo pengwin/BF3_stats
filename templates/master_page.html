@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.min.js"></script>
+{% block scripts %}{% endblock %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/master.css" />
+ {% block styles %}{% endblock %}
+</head>
+<body>
+<div id="content">
+{% block content %}{% endblock %}
+</div>
+</body>
+<html>
