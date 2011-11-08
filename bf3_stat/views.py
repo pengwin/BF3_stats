@@ -53,18 +53,19 @@ def get_medals(data_dict):
         medal_id = medal
         medal_name = data_dict['stats']['medals'][medal]['name']
         medal_description = data_dict['stats']['medals'][medal]['desc']
-        medal_count = data_dict['stats']['medals'][medal]['count']      
-        medal_needed = data_dict['stats']['medals'][medal]['needed']
+        medal_count = int(data_dict['stats']['medals'][medal]['count'])
+        medal_needed = float(data_dict['stats']['medals'][medal]['needed'])
+	medal_needed = medal_needed/(medal_count +1)
         goal_in_minutes = medal_needed > 1000 # medal goal is minutes
         if goal_in_minutes:
-            medal_needed = int(float(medal_needed)/3600.0) # convert to hours
-        medal_progress = data_dict['stats']['medals'][medal]['curr']
+            medal_needed = medal_needed/3600.0 # convert to hours
+        medal_progress = float(data_dict['stats']['medals'][medal]['curr'])
         if goal_in_minutes:
-            medal_progress = int(float(medal_progress)/3600.0) # convert to hours            
-        
-        medal_progress_percent = int((float(medal_progress)/float(medal_needed))*100)
+            medal_progress = medal_progress/3600.0 # convert to hours            
+        medal_progress = medal_progress - medal_count*medal_needed
+        medal_progress_percent = (medal_progress/medal_needed)*100
         medal_dict = {'id': medal_id,'name' : medal_name,'description' : medal_description,'count':medal_count,\
-                      'progress' : medal_progress,'needed' : medal_needed,'percent': medal_progress_percent}
+                      'progress' : int(medal_progress),'needed' : int(medal_needed),'percent': int(medal_progress_percent)}
         medals.append(medal_dict)
     return medals
 
