@@ -1,3 +1,4 @@
+import settings
 from django.conf.urls.defaults import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from bf3_stat.views import player_awards_view
@@ -8,11 +9,10 @@ from bf3_stat.views import player_view
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = staticfiles_urlpatterns()+patterns('',
-                        (r'^player/(.+)/update/',player_awards_update_view),
-                        (r'^player/(.+)/', player_awards_view),
-                        (r'^player/',player_view),
-                       
+urlpatterns = 	patterns('',\
+                (r'^player/(.+)/update/',player_awards_update_view),\
+                (r'^player/(.+)/', player_awards_view),\
+                (r'^player/',player_view),\
                         
     # Examples:
     # url(r'^$', 'bf3_awards.views.home', name='home'),
@@ -22,6 +22,8 @@ urlpatterns = staticfiles_urlpatterns()+patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-    
+    # url(r'^admin/', include(admin.site.urls)),    
 )
+
+if settings.DEBUG:
+	urlpatterns += staticfiles_urlpatterns()
