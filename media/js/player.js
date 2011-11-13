@@ -7,7 +7,7 @@ $(document).ready(function(){
 			 window.location.href += player_name+"/";																																	}
 		else
 		{
-			show_result('Please enter player name');
+			//show_result('Please enter player name');
 		}
 	});
 });		

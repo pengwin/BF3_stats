@@ -58,6 +58,7 @@ def create_ribbon_from_dict(ribbons_dict, ribbon_id):
         ribbon.ribbon_id = ribbon_id
         ribbon.name = ribbons_dict[ribbon_id]['name']
         ribbon.description = ribbons_dict[ribbon_id]['desc']
+        ribbon.picture  = "{image_url}/awards_m/{ribbon_id}.png".format(image_url=image_url, ribbon_id=ribbon_id)
         ribbon.save()
         return ribbon
     #TODO: TypeError exception or something simmilar
@@ -126,6 +127,7 @@ def update_player(data_dict):
         for ribbon in data_dict['stats']['ribbons'].keys():
             update_ribbon_data(player,data_dict['stats']['ribbons'],ribbon)
             
+        return player
     #TODO: TypeError exception or something simmilar
 
 

@@ -1,0 +1,30 @@
+<ol class="medals_list">
+    {% for medal_data in medals %}
+        {% if medal_data.percent > 0 %}
+        <li>
+            <div class="progress_bar">
+                <div class="bar_wrap">
+                    <div class="bar" style="width:{{medal_data.percent }}%"></div>
+                </div>
+                <div class="captions">
+                    <div class="left">
+                        {{ medal_data.progress }} / {{ medal_data.medal.needed }}
+                    </div>
+                    <div class="right">
+                        {{ medal_data.percent }}%
+                    </div>
+                </div>
+            </div>
+            <br>
+            <img src="{{ medal_data.medal.picture }}" >
+            <br>
+            {{ medal_data.medal.name }}
+            {% if medal_data.count != 0 %}
+                x {{ medal_data.count }}
+            {% endif %}
+            <br>
+            {{ medal_data.medal.description }}
+        </li>
+        {% endif %}
+    {% endfor %}
+</ol>

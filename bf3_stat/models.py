@@ -44,7 +44,7 @@ class Player(models.Model):
 class RibbonData(models.Model):
     ribbon = models.ForeignKey(Ribbon)
     player = models.ForeignKey(Player)
-    count = count = models.IntegerField()
+    count =  models.IntegerField()
 
 class MedalData(models.Model):
     medal = models.ForeignKey(Medal)

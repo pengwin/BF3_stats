@@ -1,0 +1,30 @@
+{% extends "master_page.html" %}
+{% block title %}Player {{ player.name }} stat{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{{ STATIC_URL }}/js/player_stats.js"></script>
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/progress_bar.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/items_list.css"/>
+{% endblock %}
+
+{% block content %}
+    <div align="center">
+            <img src='{{  player.rank.picture  }}'>
+        <h1>{{ player.name }} </h1>
+
+        <h3>Last update {{ player.last_update }} <a href="update/">Update</a></h3>
+
+            <h3>Medals</h3>
+            <canvas id="medals" width="1100" height="220">>
+            {% include 'medals_list.html' %}
+            </canvas>
+
+            <h3>Ribbons</h3>
+            <canvas id="ribbons" width="1100" height="220">>
+            {% include 'ribbons_list.html' %}
+            </canvas>
+    </div>
+{% endblock %}
