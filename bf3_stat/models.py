@@ -7,6 +7,7 @@ class Medal(models.Model):
     description = models.CharField(max_length=100)
     picture = models.URLField()
     needed = models.IntegerField()
+    needed_is_hours = models.BooleanField()
     
     def __unicode__(self):
         return self.name
