@@ -1,47 +1,31 @@
 .prev_list {
-	width: 40px;
     margin: 2px;
     float: left;
 	top: 45%;
 	position: relative;
 }
 .next_list {
-	width: 40px;
     margin: 2px;
     float: right;
 	bottom: 55%;
 	position: relative;
 }
+.items_block {
+    margin: 0;
+	padding: 0;
+	width: 1210px;
+    height: 222px;
+}
+
 .items_list {
-	padding: 0;
-	width: 1230px;
-	height: 2280px;
-}
-.medals_list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	width: 1130px;
 	height: 2280px;
 }
-.medals_list li {
-	padding: 0;
-    margin: 2px;
-    float: left;
-	position: relative;
-	text-align: center;
-    border: 1px solid gray;
-    width: 220px;
-	height: 220px;
-}
-.ribbons_list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	width: 1130px;
-	height: 2280px;
-}
-.ribbons_list li {
+
+.items_list li {
 	padding: 0;
     margin: 2px;
     float: left;

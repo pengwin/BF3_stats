@@ -1,3 +1,4 @@
 *.pyc
 *~
 *.db
+bf3stat_api_config.py

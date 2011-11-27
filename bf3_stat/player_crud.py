@@ -117,7 +117,7 @@ def update_player(data_dict):
             player.name = player_name
             
         player.rank = rank
-        player.last_update = datetime.date.fromtimestamp(data_dict['stats']['date_update'])
+        player.last_update = datetime.datetime.fromtimestamp(data_dict['stats']['date_update'])
 
         player.save()
 

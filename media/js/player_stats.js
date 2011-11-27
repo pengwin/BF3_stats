@@ -1,20 +1,19 @@
-var medals_5ths = [];
-var medals_5ths_cursor = 0;
+var medals;
 
-var ribbons_5ths = [];
-var ribbons_5ths_cursor = 0;
+var ribbons = [];
+var ribbons_cursor = 0;
 
 function get_medals_list()
 {
 	var list = [];
-	$(".medals_list").each(function (){ list.push($(this)); });	
+	$("#medals_list > li").each(function (){ list.push($(this)); });
 	return list;
 }
 
 function get_ribbons_list()
 {
     var list = [];
-	$(".ribbons_list").each(function (){ list.push($(this)); });	
+	$("#ribbons_list").each(function (){ list.push($(this)); });
 	return list;
 }
 
@@ -111,15 +110,22 @@ function prev_ribbons_list_click()
 }
 
 $(document).ready(function(){
-	medals_5ths = get_medals_list();
-	show_list(medals_5ths_cursor,medals_5ths);
-	set_medals_cursor();
-	$("#prev_medals").click( prev_medals_list_click);
-	$("#next_medals").click( next_medals_list_click);
-
-	ribbons_5ths = get_ribbons_list();
+    /*medals_item_width = medals[i].getWidth();
+    $("#medals_list").width(medals.length*medals_item_width);*/
+    
+	/*ribbons_5ths = get_ribbons_list();
 	show_list(ribbons_5ths_cursor,ribbons_5ths);
 	set_ribbons_cursor();    
 	$("#prev_ribbons").click( prev_ribbons_list_click);
-	$("#next_ribbons").click( next_ribbons_list_click);
-});	
+	$("#next_ribbons").click( next_ribbons_list_click);*/
+
+    medals = new ItemsList("medals_list");
+    medals.set_up_list();
+
+    ribbons = new ItemsList("ribbons_list");
+    ribbons.set_up_list();
+
+    $("#medals_prev").click(function(){ medals.move_left(); });
+    $("#medals_next").click(function(){ medals.move_right(); });
+});
+
