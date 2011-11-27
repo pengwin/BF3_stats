@@ -130,6 +130,16 @@ def update_player(data_dict):
         return player
     #TODO: TypeError exception or something simmilar
 
+def delete_player(player_name):
+    try:
+        player = Player.objects.get(name=player_name)
+    except Player.DoesNotExist:
+        pass
+    else:
+        MedalData.objects.filter(player=player).delete()
+        RibbonData.objects.filter(player=player).delete()
+        player.delete()
+
 
 
         

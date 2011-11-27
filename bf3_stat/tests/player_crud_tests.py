@@ -5,7 +5,7 @@ import os
 from models import Rank
 from models import Player
 
-import dict_converter
+import player_crud
 from django.utils import simplejson
 
 class DictConvertTest(TestCase):
@@ -17,7 +17,7 @@ class DictConvertTest(TestCase):
         str_data = f.read()
         data_dict = simplejson.loads(str_data)
 
-        dict_converter.update_player(data_dict)
+        player_crud.update_player(data_dict)
 
         #creation test
         player = Player.objects.get(name='Pengwin88')
@@ -26,7 +26,7 @@ class DictConvertTest(TestCase):
         id = player.id
 
         data_dict['stats']['rank']['nr'] = '25'
-        dict_converter.update_player(data_dict)
+        player_crud.update_player(data_dict)
 
         #update test
         player = Player.objects.get(name='Pengwin88')
