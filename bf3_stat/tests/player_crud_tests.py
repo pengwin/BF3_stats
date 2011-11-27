@@ -2,13 +2,12 @@
 from django.test import TestCase
 import datetime
 import os
-from models import Rank
-from models import Player
+from bf3_stat.models import Player
+from bf3_stat import player_crud
 
-import player_crud
 from django.utils import simplejson
 
-class DictConvertTest(TestCase):
+class PlayerCrudTest(TestCase):
     
     def test_player_update(self):
         path_to_file = 'player_json_test.txt'

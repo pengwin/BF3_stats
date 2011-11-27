@@ -1,0 +1,2 @@
+from player_crud_tests import PlayerCrudTest
+from bf3stat_api_tests import BF3StatAPITest
