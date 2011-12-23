@@ -34,7 +34,7 @@ ItemsList.prototype.set_up_list = function() {
 }
 
 ItemsList.prototype.move_right = function() {
-    if (this.cursor < this.items.length) {
+    if (this.cursor < (this.items.length-5)) {
         this.cursor = this.cursor + 1;
         this.show_items();
     }

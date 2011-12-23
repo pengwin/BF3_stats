@@ -6,7 +6,7 @@ Created on Nov 5, 2011
 '''
 import django
 import time
-from bf3_stat import player_crud
+from bf3_stat import cache
 from bf3_stat.models import Player, MedalData, RibbonData
 import simple_file_cache
 from django.http import HttpResponse
@@ -16,7 +16,6 @@ from django.template import Context
 from  django.template import RequestContext
 
 import bf3stat_api
-
 
 image_url = "http://dl.dropbox.com/u/48383441/images"
 
@@ -50,7 +49,7 @@ def player_awards_view(request, player_name):
             return my_render_to_response(request,'player_not_found.html',{'name':player_name})
         if data_dict['stats'] == None:
             return my_render_to_response(request,'player_not_found.html',{'name':player_name})
-        player = player_crud.update_player(data_dict)
+        player = cache.update_player(data_dict)
     view_dict = {'player':player}
     medals = MedalData.objects.filter(player=player).order_by('-percent')
     view_dict['medals'] = medals
@@ -59,15 +58,15 @@ def player_awards_view(request, player_name):
     view_dict['ribbons'] = ribbons
     return my_render_to_response(request,'player_stats.html',view_dict)
 
-def player_ajax_medals_view(request, player_name):
-    if request.is_ajax():
-        data_dict = get_player_awards_data(player_name)
-        
+
 def player_awards_update_view(request, player_name):
-    player_crud.delete_player(player_name)
+    cache.delete_player(player_name)
     data_dict = {'name': player_name}
     return my_render_to_response(request, 'player_update.html', data_dict)
 
 
 def player_view(request):
     return my_render_to_response(request, 'player.html', {"none": None})
+
+def player_info(request):
+    return my_render_to_response(request, 'player_ajax.html', {"none": None})

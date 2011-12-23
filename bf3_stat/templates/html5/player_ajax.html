@@ -1,0 +1,28 @@
+{% extends "master_page.html" %}
+
+{% block title %}Player info{% endblock %}
+
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/player_ajax.css"/>
+{% endblock %}
+
+{%block scripts %}
+<script type="text/javascript" src="{{ STATIC_URL }}/js/player_ajax.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div id="search">
+<div style="text-align: center;">
+<img src="{{ image_url }}/bf3/servicestars/servicestar.png">
+<br/>
+    <label for="player_name" style="">Soldier</label><input id="player_name" type="text" style="width: 300; height: 50;;" />
+    </div>
+</div>
+
+ <div id="result" style="text-align: center;">
+<canvas   id="player_info" width=800 height=600></canvas>
+ </div>
+
+{% endblock %}

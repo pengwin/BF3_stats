@@ -1,0 +1,12 @@
+{% extends "master_page.html" %}
+{% block title %}Player {{ name }} update{% endblock %}
+{% block content %}
+<div style="text-align: center;">
+<h1>Player update progress</h1>
+<h2>
+    Request status: {{ update_status.request_status }} <br/>
+    Position in queue: {{ update_status.queue_position }} <br/>
+    Task state: {{ update_status.task_state }} <br/>
+</h2>
+</div>
+{% endblock %}

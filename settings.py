@@ -45,22 +45,22 @@ USE_I18N = True
 USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
+# Example: "/home/jquery/jquery.lawrence.com/jquery/"
 MEDIA_ROOT = ''
 
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# URL that handles the jquery served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+# Examples: "http://jquery.lawrence.com/jquery/", "http://example.com/jquery/"
 MEDIA_URL = ''
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
+# Example: "/home/jquery/jquery.lawrence.com/static/"
 STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'public/static').replace('\\','/')
 
 # URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
+# Example: "http://jquery.lawrence.com/static/"
 STATIC_URL = '/static'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
@@ -74,6 +74,8 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(os.path.dirname(__file__), 'media').replace('\\','/'),
+    os.path.join(os.path.dirname(__file__), 'bf3_stat/media').replace('\\','/'),
+    os.path.join(os.path.dirname(__file__), 'bf3_stat/media/jquery').replace('\\','/'),
 )
 
 # List of finder classes that know how to find static files in
@@ -87,7 +89,7 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = ')w&jlbo#10ehy**_@cit7jp8da_ic$gl+2w%35=g39n(o*ps-4'
 
-# List of callables that know how to import templates from various sources.
+# List of callables that know how to import jquery from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
@@ -105,7 +107,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'bf3_stats.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/jquery".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
@@ -130,7 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bf3_stats.bf3_stat',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

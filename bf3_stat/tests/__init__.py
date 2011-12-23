@@ -1,2 +1,2 @@
-from player_crud_tests import PlayerCrudTest
-from bf3stat_api_tests import BF3StatAPITest
+from bf3_stat.bf3stat_api.tests.player_tests import PlayerRequestsTest
+from bf3_stat.cache.tests.player_tests import PlayerCacheTest

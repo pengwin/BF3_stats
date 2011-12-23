@@ -11,26 +11,27 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/items_list.css"/>
 {% endblock %}
 
+{% load  from_timestamp %}
+
 {% block content %}
     <div align="center">
-            <img src='{{  player.rank.picture  }}'>
+       <img src='{{ image_url }}{{  player.rank.picture  }}'>
         <h1>{{ player.name }} </h1>
 
         <h3>Last update {{ player.last_update }} <a href="update/">Update</a></h3>
 
             <h3>Medals</h3>
-
-            <!-- <canvas id="medals" width="1100" height="220"> -->
             <div class="items_block">
                 <img id="medals_prev" class="prev_list" src="{{ STATIC_URL }}/img/arrow_l.png">
-                {% include 'medals_list.html' %}
+                {% include 'jquery/medals_list.html' %}
                 <img id="medals_next"  class="next_list" src="{{ STATIC_URL }}/img/arrow_r.png">
             </div>
-            <!-- </canvas> -->
-
+            <br>
             <h3>Ribbons</h3>
-            <!-- <canvas id="ribbons" width="1100" height="220"> -->
-            {% include 'ribbons_list.html' %}
-            <!-- </canvas> -->
+            <div class="items_block">
+                <img id="ribbons_prev" class="prev_list" src="{{ STATIC_URL }}/img/arrow_l.png">
+                {% include 'jquery/ribbons_list.html' %}
+                <img id="ribbons_next"  class="next_list" src="{{ STATIC_URL }}/img/arrow_r.png">
+            </div>
     </div>
 {% endblock %}

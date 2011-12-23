@@ -3,7 +3,7 @@
         {% if ribbon_data.count > 0 %}
         <li>
             <br>
-            <img src="{{ ribbon_data.ribbon.picture }}">
+            <img src="{{  image_url }}{{ ribbon_data.ribbon.picture }}">
             <br>
             {{ ribbon_data.ribbon.name }}
             {% if ribbon_data.count != 0 %}
