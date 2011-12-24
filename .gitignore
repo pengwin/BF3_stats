@@ -3,3 +3,5 @@
 *.db
 bf3_stat/bf3stat_api/config.py
 .idea
+deploy/
+public/

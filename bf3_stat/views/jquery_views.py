@@ -50,7 +50,9 @@ def player_update_view(request,player_name):
         if settings.DEBUG:
             response_dict['error'] = ex.message
         return my_render_to_response(request,'jquery/player_request_error.html',response_dict)
-
+	
+    if update_status.task_state == u'finished':
+	return player_awards_view(request,player_name)
     return my_render_to_response(request,'jquery/player_update.html',{'update_status' : update_status})
 
 

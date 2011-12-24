@@ -1,7 +1,7 @@
 # Django settings for bf3_stats project.
 import os
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
